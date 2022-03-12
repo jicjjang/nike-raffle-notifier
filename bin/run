@@ -3,5 +3,5 @@
 npm install
 export PATH="node_modules/.bin:$PATH"
 
-exec tsc
+npm run build
 npm start
