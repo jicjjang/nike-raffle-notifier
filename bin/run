@@ -1,5 +1,5 @@
 #!/bin/sh
 
 npm install
-npx tsc
+npm run tsc
 npm start
