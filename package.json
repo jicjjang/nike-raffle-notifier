@@ -19,9 +19,7 @@
   "homepage": "https://github.com/jicjjang/nike-raffle-notifier#readme",
   "dependencies": {
     "axios": "^0.26.1",
-    "dotenv": "^16.0.0"
-  },
-  "devDependencies": {
+    "dotenv": "^16.0.0",
     "@types/node": "^17.0.21",
     "@types/node-cron": "^3.0.1",
     "node-cron": "^3.0.0",
