@@ -67,9 +67,13 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
 
 (async () => {
   // 월화수목금 매시 15분마다 조회
-  cron.schedule("0 0/15 * * * 1,2,3,4,5", async () => {
-    await storyCheck(NIKE_STORE_INFOMATION);
-    await feedCheck(NIKE_STORE_INFOMATION);
+  // cron.schedule("0 0/15 * * * 1,2,3,4,5", async () => {
+  //   await storyCheck(NIKE_STORE_INFOMATION);
+  //   await feedCheck(NIKE_STORE_INFOMATION);
+  // });
+
+  cron.schedule("30 * * * * *", async () => {
+    console.log("test");
   });
 
   const PORT = process.env.PORT || 3000;
