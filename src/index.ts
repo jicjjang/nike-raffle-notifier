@@ -1,9 +1,11 @@
+import * as express from "express";
 import * as cron from "node-cron";
 
 import "dotenv/config";
 
 import storyCheck from "./service/storyCheck";
 import feedCheck from "./service/feedCheck";
+import { Request, Response } from "express";
 
 export interface IStoryInformation {
   id: string;
@@ -69,4 +71,8 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
     await storyCheck(NIKE_STORE_INFOMATION);
     await feedCheck(NIKE_STORE_INFOMATION);
   });
+
+  express()
+    .get("/", (req: Request, res: Response) => res.end("ping-pong"))
+    .listen(80, () => console.log(`Listening on 80`));
 })();
