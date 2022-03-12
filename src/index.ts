@@ -72,7 +72,9 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
     await feedCheck(NIKE_STORE_INFOMATION);
   });
 
+  const PORT = process.env.PORT || 3000;
+
   express()
     .get("/", (req: Request, res: Response) => res.end("ping-pong"))
-    .listen(80, () => console.log(`Listening on 80`));
+    .listen(PORT, () => console.log(`Listening on ${PORT}`));
 })();
