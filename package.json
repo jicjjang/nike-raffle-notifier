@@ -4,7 +4,9 @@
   "description": "Newest stocked nike shoes notifier based instagram.",
   "main": "build/index.js",
   "scripts": {
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "postinstall": "npm run tsc"
   },
   "repository": {
     "type": "git",
