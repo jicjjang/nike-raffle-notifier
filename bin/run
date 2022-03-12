@@ -1,5 +1,7 @@
 #!/bin/sh
 
 npm install
-npm run tsc
+export PATH="node_modules/.bin:$PATH"
+
+tsc
 npm start
