@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "start": "node build/index.js",
-    "postinstall": "tsc",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "postinstall": "npm run tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
