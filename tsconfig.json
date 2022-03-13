@@ -9,7 +9,7 @@
     "target": "es6",
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
-    "types": ["node"],
+    "types": ["node", "@types/jest"],
     "typeRoots": ["../node_modules/@types"]
   },
   "include": ["./src/**/*.ts"],
