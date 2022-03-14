@@ -4,8 +4,6 @@ import { compareArray } from "../utils";
 import { sendMessage } from "../bot";
 
 const storyCheck = async (NIKE_STORE_INFOMATION: IStoryInformation[]) => {
-  let isFirst = true;
-
   const instagramStories = await Promise.all(
     NIKE_STORE_INFOMATION.map((nikeStore) => fetchNikeStoreStory(nikeStore.id))
   );

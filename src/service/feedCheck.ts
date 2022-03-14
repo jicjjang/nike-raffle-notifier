@@ -3,8 +3,6 @@ import { fetchNikeStoreFeed } from "../api";
 import { sendMessage } from "../bot";
 
 const feedCheck = async (NIKE_STORE_INFOMATION: IStoryInformation[]) => {
-  let isFirst = true;
-
   const instagramFeeds = await Promise.all(
     NIKE_STORE_INFOMATION.map((nikeStore) => fetchNikeStoreFeed(nikeStore.name))
   );
