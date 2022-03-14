@@ -48,16 +48,11 @@ export const fetchNikeStoreStory = async (id: string) => {
       }
     );
     if (result.request?.path.startsWith("/accounts/login")) {
-      /**
-       * @TODO Notifiy
-       */
-      sendMessage("instagram 결과가 문자열로 옴. 알 수 없는 에러");
+      sendMessage("로그인이 필요하다는 알림이 왔음");
       process.exit(-1);
     } else if (typeof result.data === "string") {
-      /**
-       * @TODO Notifiy
-       */
       sendMessage("instagram 결과가 문자열로 옴. 알 수 없는 에러");
+      console.log(result.data);
       process.exit(-1);
     }
     return result.data;
