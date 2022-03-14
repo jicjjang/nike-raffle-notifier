@@ -68,17 +68,6 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
 
 const startMinutes = new Date().getMinutes();
 
-let count =
-  startMinutes >= 48
-    ? 5
-    : startMinutes >= 36
-    ? 4
-    : startMinutes >= 24
-    ? 3
-    : startMinutes >= 12
-    ? 2
-    : 1;
-
 (async () => {
   // 월화수목금 정각으로부터 12분마다 조회
   cron.schedule(
@@ -88,9 +77,8 @@ let count =
       await feedCheck(NIKE_STORE_INFOMATION);
 
       console.log(`date: ${new Date()}`);
-      console.log(`count: ${count}`);
       console.log(NIKE_STORE_INFOMATION);
-      if (count++ % 5 === 0) {
+      if (new Date().getMinutes() < 12) {
         sendMessage("Still alive nike-raffle-notify");
       }
     }
