@@ -1,4 +1,4 @@
-import { IStoryInformation } from "../";
+import { IStoryInformation } from "../nike-raffle-notifier";
 import { fetchNikeStoreFeed } from "../api";
 import { sendMessage } from "../bot";
 
