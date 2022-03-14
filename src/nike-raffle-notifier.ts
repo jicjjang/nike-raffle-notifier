@@ -1,4 +1,4 @@
-import * as express from "express";
+import express from "express";
 import * as cron from "node-cron";
 
 import "dotenv/config";
@@ -73,8 +73,6 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
   },
 ];
 
-const startMinutes = new Date().getMinutes();
-
 (async () => {
   // 월화수목금 정각으로부터 12분마다 조회
   cron.schedule(
@@ -93,7 +91,8 @@ const startMinutes = new Date().getMinutes();
 
   const PORT = process.env.PORT || 3000;
 
-  express()
-    .get("/", (req: Request, res: Response) => res.end("ping-pong"))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
+  const app = express();
+
+  app.get("/", (_: Request, res: Response) => res.end("ping-pong"));
+  app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 })();
