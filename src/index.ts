@@ -34,12 +34,13 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
     story: { media_ids: [], isFirst: true },
     feed: { shortcode: "", isFirst: true },
   },
-  {
-    id: "2354243772",
-    name: "nike_snkrs_hongdae",
-    story: { media_ids: [], isFirst: true },
-    feed: { shortcode: "", isFirst: true },
-  },
+  // 리뉴얼로 업데이트 안됨
+  // {
+  //   id: "2354243772",
+  //   name: "nike_snkrs_hongdae",
+  //   story: { media_ids: [], isFirst: true },
+  //   feed: { shortcode: "", isFirst: true },
+  // },
   {
     id: "7596298584",
     name: "ipark_yongsan_nike",
@@ -61,6 +62,12 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
   {
     id: "17357885839",
     name: "nike__seohyeon",
+    story: { media_ids: [], isFirst: true },
+    feed: { shortcode: "", isFirst: true },
+  },
+  {
+    id: "6420124090",
+    name: "nike_timessquare",
     story: { media_ids: [], isFirst: true },
     feed: { shortcode: "", isFirst: true },
   },
