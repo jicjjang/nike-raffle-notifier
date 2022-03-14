@@ -19,13 +19,15 @@ const feedCheck = async (NIKE_STORE_INFOMATION: IStoryInformation[]) => {
       NIKE_STORE_INFOMATION[index].feed.shortcode = medias[0].node.shortcode;
 
       // 처음 접속해서 NIKE_STORE_INFOMATION 의 array가 비어있는 경우는 Notify하지 않음
-      if (NIKE_STORE_INFOMATION[index].feed.isFirst) {
-        NIKE_STORE_INFOMATION[index].feed.isFirst = false;
-      } else {
+      if (!NIKE_STORE_INFOMATION[index].feed.isFirst) {
         sendMessage(
           `[${NIKE_STORE_INFOMATION[index].name}] feed에 게시물이 추가된 것 같아요!`
         );
       }
+    }
+
+    if (NIKE_STORE_INFOMATION[index].feed.isFirst) {
+      NIKE_STORE_INFOMATION[index].feed.isFirst = false;
     }
   });
 };

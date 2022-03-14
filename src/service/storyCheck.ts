@@ -23,13 +23,15 @@ const storyCheck = async (NIKE_STORE_INFOMATION: IStoryInformation[]) => {
       );
 
       // 처음 접속해서 NIKE_STORE_INFOMATION 의 array가 비어있는 경우는 Notify하지 않음
-      if (NIKE_STORE_INFOMATION[index].story.isFirst) {
-        NIKE_STORE_INFOMATION[index].story.isFirst = false;
-      } else {
+      if (!NIKE_STORE_INFOMATION[index].story.isFirst) {
         sendMessage(
           `[${NIKE_STORE_INFOMATION[index].name}] story가 추가된 것 같아요!`
         );
       }
+    }
+
+    if (NIKE_STORE_INFOMATION[index].story.isFirst) {
+      NIKE_STORE_INFOMATION[index].story.isFirst = false;
     }
   });
 };
