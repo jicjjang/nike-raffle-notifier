@@ -84,7 +84,7 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
         NIKE_STORE_INFOMATION.filter((store) => store.feed.isSet)
       );
 
-      console.log(`date: ${new Date()}`);
+      console.log(`\n\ntype: feed`);
       console.log(NIKE_STORE_INFOMATION);
       if (new Date().getMinutes() < 15) {
         sendMessage("Still alive nike-raffle-notify -> feed");
@@ -93,12 +93,12 @@ const NIKE_STORE_INFOMATION: IStoryInformation[] = [
   );
 
   // 10-14시, 매 5분마다 스토리 조회
-  cron.schedule("0 0/5 10,11,12,13,14 * * *", async () => {
+  cron.schedule("0 */5 10,11,12,13,14 * * *", async () => {
     await storyCheck(
       NIKE_STORE_INFOMATION.filter((store) => store.story.isSet)
     );
 
-    console.log(`date: ${new Date()}`);
+    console.log(`\n\ntype: story`);
     console.log(NIKE_STORE_INFOMATION);
     if (new Date().getMinutes() < 5) {
       sendMessage("Still alive nike-raffle-notify -> story");
